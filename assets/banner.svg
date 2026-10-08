@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 350" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="50%" stop-color="#1e1b4b" />
+      <stop offset="100%" stop-color="#090d16" />
+    </linearGradient>
+    <linearGradient id="titleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="50%" stop-color="#818cf8" />
+      <stop offset="100%" stop-color="#c084fc" />
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0ea5e9" />
+      <stop offset="100%" stop-color="#6366f1" />
+    </linearGradient>
+    
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <style>
+    .title { font-family: system-ui, -apple-system, sans-serif; font-weight: 800; font-size: 42px; fill: url(#titleGrad); }
+    .subtitle { font-family: system-ui, -apple-system, sans-serif; font-weight: 500; font-size: 18px; fill: #94a3b8; }
+    .badge-text { font-family: system-ui, -apple-system, sans-serif; font-weight: 600; font-size: 13px; fill: #e2e8f0; }
+    .grid-line { stroke: #334155; stroke-opacity: 0.3; stroke-width: 1; }
+    
+    /* Animated DNS packet flows in background */
+    @keyframes flowLeftToRight {
+      0% { stroke-dashoffset: 200; }
+      100% { stroke-dashoffset: 0; }
+    }
+    @keyframes pulseGlow {
+      0%, 100% { opacity: 0.3; transform: scale(1); }
+      50% { opacity: 0.7; transform: scale(1.05); }
+    }
+    .data-wire { stroke: #38bdf8; stroke-width: 2; stroke-dasharray: 8 12; animation: flowLeftToRight 3s linear infinite; opacity: 0.5; }
+    .data-wire-2 { stroke: #c084fc; stroke-width: 2; stroke-dasharray: 6 10; animation: flowLeftToRight 4s linear infinite reverse; opacity: 0.5; }
+    .node-pulse { animation: pulseGlow 4s ease-in-out infinite; transform-origin: center; }
+  </style>
+
+  <!-- Background -->
+  <rect width="1200" height="350" rx="16" fill="url(#bgGrad)" />
+
+  <!-- Grid Pattern Background -->
+  <g>
+    <line x1="100" y1="0" x2="100" y2="350" class="grid-line" />
+    <line x1="300" y1="0" x2="300" y2="350" class="grid-line" />
+    <line x1="500" y1="0" x2="500" y2="350" class="grid-line" />
+    <line x1="700" y1="0" x2="700" y2="350" class="grid-line" />
+    <line x1="900" y1="0" x2="900" y2="350" class="grid-line" />
+    <line x1="1100" y1="0" x2="1100" y2="350" class="grid-line" />
+
+    <line x1="0" y1="70" x2="1200" y2="70" class="grid-line" />
+    <line x1="0" y1="140" x2="1200" y2="140" class="grid-line" />
+    <line x1="0" y1="210" x2="1200" y2="210" class="grid-line" />
+    <line x1="0" y1="280" x2="1200" y2="280" class="grid-line" />
+  </g>
+
+  <!-- Dynamic Animated Dynamic Background Lines & Nodes (Behind Text) -->
+  <g>
+    <!-- Background Connection Paths -->
+    <path d="M 150 270 Q 350 310 600 270 T 1050 270" fill="none" class="data-wire" />
+    <path d="M 100 80 Q 400 40 700 80 T 1100 80" fill="none" class="data-wire-2" />
+    
+    <!-- Decorative Ambient Nodes -->
+    <circle cx="150" cy="270" r="30" fill="#0284c7" opacity="0.15" class="node-pulse" />
+    <circle cx="1050" cy="270" r="35" fill="#7c3aed" opacity="0.15" class="node-pulse" />
+  </g>
+
+  <!-- Content Layer (Foreground - Guaranteed Visible & Clear) -->
+  <!-- Top Icon Badge -->
+  <g transform="translate(60, 45)">
+    <rect width="180" height="32" rx="16" fill="url(#accentGrad)" opacity="0.2" />
+    <rect width="180" height="32" rx="16" fill="none" stroke="#38bdf8" stroke-width="1" opacity="0.5" />
+    <text x="90" y="21" text-anchor="middle" class="badge-text">🌐 HYBRID CLOUD DNS</text>
+  </g>
+
+  <!-- Main Title -->
+  <text x="60" y="130" class="title" filter="url(#glow)">Awesome Hybrid Cloud DNS Resolution</text>
+  
+  <!-- Subtitle -->
+  <text x="60" y="175" class="subtitle">Curated Directory of Cloud DNS Endpoints, Enterprise DDI &amp; Open-Source Resolvers</text>
+
+  <!-- Key Architecture Feature Pills (Foreground) -->
+  <g transform="translate(60, 220)">
+    <!-- Pill 1 -->
+    <g transform="translate(0, 0)">
+      <rect width="210" height="42" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1" />
+      <circle cx="25" cy="21" r="6" fill="#38bdf8" />
+      <text x="42" y="26" font-family="system-ui" font-size="14" font-weight="600" fill="#f8fafc">Inbound &amp; Outbound</text>
+    </g>
+    <!-- Pill 2 -->
+    <g transform="translate(225, 0)">
+      <rect width="210" height="42" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1" />
+      <circle cx="25" cy="21" r="6" fill="#818cf8" />
+      <text x="42" y="26" font-family="system-ui" font-size="14" font-weight="600" fill="#f8fafc">Conditional Forwarding</text>
+    </g>
+    <!-- Pill 3 -->
+    <g transform="translate(450, 0)">
+      <rect width="210" height="42" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1" />
+      <circle cx="25" cy="21" r="6" fill="#c084fc" />
+      <text x="42" y="26" font-family="system-ui" font-size="14" font-weight="600" fill="#f8fafc">Private DNS Zones</text>
+    </g>
+    <!-- Pill 4 -->
+    <g transform="translate(675, 0)">
+      <rect width="210" height="42" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1" />
+      <circle cx="25" cy="21" r="6" fill="#4ade80" />
+      <text x="42" y="26" font-family="system-ui" font-size="14" font-weight="600" fill="#f8fafc">Enterprise DDI &amp; IPAM</text>
+    </g>
+  </g>
+
+  <!-- Bottom Accent Line -->
+  <rect x="60" y="295" width="1080" height="2" fill="url(#titleGrad)" opacity="0.4" />
+</svg>
