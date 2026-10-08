@@ -63,7 +63,7 @@ The global enterprise DNS and DDI (DNS, DHCP, IPAM) market is estimated at **$2.
 
 ## 🔓 Open-Source GitHub Projects
 
-*Sorted by GitHub Stars Count (Descending)* 🌟
+*Sorted by GitHub_Stars_Count (Descending)* 🌟
 
 - **[Pi-hole](https://github.com/pi-hole/pi-hole)** [![Stars](https://img.shields.io/github/stars/pi-hole/pi-hole?style=social&color=white)](https://github.com/pi-hole/pi-hole/stargazers) 🕳️  
   **Network-wide ad blocking via DNS sinkhole**, EUPL-1.2 licensed. Operates as a DNS proxy/forwarder with conditional forwarding capabilities for hybrid local networks, custom blocklists, and an intuitive web administration dashboard.
@@ -112,7 +112,7 @@ Contributions are welcome! Follow these steps to submit new hybrid DNS platforms
 
 1. 🍴 **Fork** the repository.
 2. 📝 **Add/edit** entries in `README.md` maintaining table/list structure and formatting.
-3. 🔗 Include project title, official website/GitHub link, exact star count, license, and brief description.
+3. 🔗 Include project title, official website/GitHub link, exact Stars_Count, license, and brief description.
 4. 🚀 Submit a **Pull Request** with a descriptive summary of your changes.
 
 ---
